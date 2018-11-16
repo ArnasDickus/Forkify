@@ -1,17 +1,7 @@
-// Global app controller
-import axios from "axios";
 
-async function getResults(query){
-    const key = `4702a73a0158ae77d799b2b7a1e9ec98`;
-    try{
-    const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${query}`);
-    const recipes = res.data.recipes;
-    console.log(recipes);
-    }catch(error){
-        alert(error);
-    }
-    
-}
+import Search from './models/Search';
 
-getResults('pizza');
+const search = new Search('pizza');
 
+console.log(search);
+search.getResults();
